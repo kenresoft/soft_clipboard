@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:soft_clipboard/core/storage/local_storage.dart';
 import 'package:soft_clipboard/data/datasources/clipboard_local_datasource.dart';
 import 'package:soft_clipboard/data/datasources/clipboard_service.dart'; // Contains ClipboardServiceImpl.
 import 'package:soft_clipboard/data/models/clipboard_item_model.dart';
@@ -24,7 +25,8 @@ class DependencyInjection {
     Hive.registerAdapter(ClipboardItemModelAdapter());
 
     // Open the box for storing clipboard items.
-    await Hive.openBox<ClipboardItemModel>('clipboard_items');
+    await Hive.openBox<ClipboardItemModel>('soft_clipboard_items');
+    await LocalStorage.init('soft_clipboard_preference');
   }
 
   /// Repository Providers to make dependencies available throughout the app.
