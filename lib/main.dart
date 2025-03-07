@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soft_clipboard/presentation/pages/clipboard_history_page.dart';
+import 'package:soft_clipboard/presentation/pages/home_page.dart';
 
 import 'di.dart';
 
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Clipboard Manager',
+      title: 'SoftClipboard',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.system,
-      home: const ClipboardHistoryPage(),
+      home: const HomePage(),
     );
   }
 }

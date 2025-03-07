@@ -7,7 +7,7 @@ import 'package:soft_clipboard/presentation/widgets/clipboard_item_card.dart';
 import 'package:soft_clipboard/presentation/widgets/empty_state.dart';
 
 class ClipboardHistoryPage extends StatefulWidget {
-  const ClipboardHistoryPage({Key? key}) : super(key: key);
+  const ClipboardHistoryPage({super.key});
 
   @override
   State<ClipboardHistoryPage> createState() => _ClipboardHistoryPageState();

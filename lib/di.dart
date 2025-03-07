@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:soft_clipboard/core/storage/local_storage.dart';
 import 'package:soft_clipboard/data/datasources/clipboard_local_datasource.dart';
-import 'package:soft_clipboard/data/datasources/clipboard_service.dart'; // Contains ClipboardServiceImpl.
+import 'package:soft_clipboard/data/datasources/clipboard_service.dart';
 import 'package:soft_clipboard/data/models/clipboard_item_model.dart';
 import 'package:soft_clipboard/data/repositories/clipboard_repository_impl.dart';
 import 'package:soft_clipboard/domain/repositories/clipboard_repository.dart';
@@ -11,6 +11,7 @@ import 'package:soft_clipboard/domain/usecases/delete_clipboard_item.dart';
 import 'package:soft_clipboard/domain/usecases/get_clipboard_items.dart';
 import 'package:soft_clipboard/domain/usecases/update_clipboard_item.dart';
 import 'package:soft_clipboard/presentation/blocs/clipboard/clipboard_bloc.dart';
+import 'package:soft_clipboard/presentation/blocs/settings/settings_bloc.dart';
 
 class DependencyInjection {
   // Private constructor to prevent instantiation
@@ -33,7 +34,7 @@ class DependencyInjection {
   static List<RepositoryProvider> get repositoryProviders => [
         // Provide the Hive box.
         RepositoryProvider<Box<ClipboardItemModel>>(
-          create: (_) => Hive.box<ClipboardItemModel>('clipboard_items'),
+          create: (_) => Hive.box<ClipboardItemModel>('soft_clipboard_items'),
         ),
 
         // Provide the local data source that uses the Hive box.
@@ -96,6 +97,9 @@ class DependencyInjection {
               clipboardService: context.read<ClipboardService>(),
             );
           },
+        ),
+        BlocProvider<SettingsBloc>(
+          create: (_) => SettingsBloc(),
         ),
       ];
 }

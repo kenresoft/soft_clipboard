@@ -6,7 +6,7 @@ import 'package:soft_clipboard/presentation/pages/clipboard_history_page.dart';
 import 'package:soft_clipboard/presentation/pages/settings_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
