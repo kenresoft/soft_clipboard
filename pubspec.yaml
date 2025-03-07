@@ -44,9 +44,7 @@ dependencies:
   permission_handler: ^11.4.0
   share_plus: ^10.1.4
   lottie: ^3.3.1
-  flutter_background_service: ^5.1.0
-  flutter_foreground_task: ^8.17.0
-  platform_device_id: ^1.0.1
+  clipboard_watcher: ^0.3.0
 
 dev_dependencies:
   flutter_test:
