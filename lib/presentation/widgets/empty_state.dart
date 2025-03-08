@@ -8,12 +8,12 @@ class EmptyState extends StatelessWidget {
   final String? animationAsset;
 
   const EmptyState({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
     this.action,
     this.animationAsset,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +24,12 @@ class EmptyState extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (animationAsset != null)
-              /*Lottie.asset(
+              Lottie.asset(
                 animationAsset!,
                 width: 200,
                 height: 200,
                 repeat: true,
-              ),*/
+              ),
             const SizedBox(height: 16),
             Text(
               title,
