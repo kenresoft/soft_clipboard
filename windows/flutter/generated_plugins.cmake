@@ -4,7 +4,6 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   clipboard_watcher
-  permission_handler_windows
   share_plus
   url_launcher_windows
 )

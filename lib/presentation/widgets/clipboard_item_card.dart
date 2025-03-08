@@ -13,7 +13,7 @@ class ClipboardItemCard extends StatelessWidget {
   final VoidCallback? onEdit;
 
   const ClipboardItemCard({
-    Key? key,
+    super.key,
     required this.item,
     required this.onTap,
     required this.onCopy,
@@ -21,7 +21,7 @@ class ClipboardItemCard extends StatelessWidget {
     required this.onTogglePinned,
     required this.onToggleFavorite,
     this.onEdit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
